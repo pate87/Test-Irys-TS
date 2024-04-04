@@ -2,28 +2,11 @@
 
 import getWebIrys from "../utils/getIrys";
 import { useState, useEffect } from "react";
+import GetWeaveDB from "../utils/getWeaveDB";
 
 export const Uploader: React.FC<UploaderConfigProps> = () => {
   const [connectedAddress, setConnectedAddress] = useState<string>();
   const [files, setFiles] = useState<FileWrapper[]>([]);
-
-  //   const handleFileUpload = async (/*event*/) => {
-  //     console.log("handleFileUpload");
-  //     const getWebIrys = await getWebIrys();
-  //     console.log("getWebIrys", getWebIrys);
-
-  //     const fileToUpload =
-  //       "/home/pinky/Pictures/170px-PinkyandtheBrain.Pinky.png";
-  //     // const fileToUpload = event.target.files[0];
-  //     const tags = [{ name: "Pinky-and-Brain", value: "MyTestImage" }];
-
-  //     try {
-  //       const receipt = await irys.uploadFile(fileToUpload, { tags: tags });
-  //       console.log(`Data uploaded ==> https://arweave.net/${receipt.id}`);
-  //     } catch (e) {
-  //       console.log("Error uploading data ", e);
-  //     }
-  //   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
@@ -41,9 +24,15 @@ export const Uploader: React.FC<UploaderConfigProps> = () => {
 
   const handleUpload = async () => {
     const irys = await getWebIrys(); // Assuming this function returns the Irys instance
+    console.log("irys", irys);
 
+    const weavedb = await GetWeaveDB();
+    console.log("weavedb", weavedb);
+
+    // Upload the files
     for (const fileWrapper of files) {
       const tags = [{ name: "Content-Type", value: fileWrapper.file.type }];
+
       try {
         const receipt = await irys.uploadFile(fileWrapper.file, { tags });
         console.log(`Data uploaded ==> https://arweave.net/${receipt.id}`);
@@ -51,6 +40,13 @@ export const Uploader: React.FC<UploaderConfigProps> = () => {
         fileWrapper.id = receipt.id;
         fileWrapper.isUploaded = true;
         fileWrapper.previewURL = `https://arweave.net/${receipt.id}`;
+
+        // set DB entry
+        await weavedb.set(
+          { id: 2, url: `https://arweave.net/${receipt.id}` },
+          "file",
+          "2"
+        );
       } catch (e) {
         console.log("Error uploading data ", e);
       }
@@ -68,9 +64,9 @@ export const Uploader: React.FC<UploaderConfigProps> = () => {
         )}
       </div>
       <div className="card">
+        <input type="file" multiple onChange={handleFileUpload} name="file" />
         <button onClick={handleUpload}>Upload</button>
       </div>
-      <input type="file" multiple onChange={handleFileUpload} name="file" />
     </main>
   );
 };
