@@ -10,7 +10,7 @@ export const WeaveDB = () => {
   const [profiles, setProfiles] = useState<any>([]);
   const getProfiles = async () => {
     const db = await getWeaveDB();
-    const profiles = await db.cget("customers");
+    const profiles = await db.cget("file");
     setProfiles(profiles);
     console.log("profiles", profiles);
   };
@@ -30,7 +30,7 @@ export const WeaveDB = () => {
                 <li key={index}>
                   <h2>Profile {index + 1}</h2>
                   <ul>
-                    <li>Name: {profile?.name}</li>
+                    <li>Name: {profile?.url}</li>
                     <li>User Address: {profile?.user_address}</li>
                     <li>Phone Number: {profile?.phone_number}</li>
                     <li>Email: {profile?.email}</li>

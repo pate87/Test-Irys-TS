@@ -3,6 +3,18 @@
 import getWebIrys from "../utils/getIrys";
 import { useState, useEffect } from "react";
 import GetWeaveDB from "../utils/getWeaveDB";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const Uploader: React.FC<UploaderConfigProps> = () => {
   const [connectedAddress, setConnectedAddress] = useState<string>();
@@ -56,17 +68,20 @@ export const Uploader: React.FC<UploaderConfigProps> = () => {
   };
 
   return (
-    <main>
-      <h1>Irys Test</h1>
-      <div>
-        {connectedAddress && connectedAddress.length > 0 && (
-          <h3>Connected from: {connectedAddress}</h3>
-        )}
-      </div>
-      <div className="card">
-        <input type="file" multiple onChange={handleFileUpload} name="file" />
-        <button onClick={handleUpload}>Upload</button>
-      </div>
+    <main className="flex flex-col items-center justify-between p-24">
+      <Card className={cn("w-[480px]")}>
+        <CardHeader>
+          <CardTitle>Upload File</CardTitle>
+          <CardDescription>Upload your files to Arweave</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Label htmlFor="file">PDF File</Label>
+          <Input type="file" multiple onChange={handleFileUpload} name="file" />
+        </CardContent>
+        <CardFooter>
+          <Button onClick={handleUpload}>Upload</Button>
+        </CardFooter>
+      </Card>
     </main>
   );
 };
