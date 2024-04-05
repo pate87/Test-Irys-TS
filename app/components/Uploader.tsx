@@ -15,11 +15,12 @@ import {
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Inbox, Loader2 } from "lucide-react";
 
 export const Uploader: React.FC<
   UploaderConfigProps & { onUpload: (url: string) => void }
 > = ({ onUpload }) => {
-  const [connectedAddress, setConnectedAddress] = useState<string>();
+  const [uploading, setUploading] = useState<boolean>(false);
   const [files, setFiles] = useState<FileWrapper[]>([]);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,6 +49,7 @@ export const Uploader: React.FC<
       const tags = [{ name: "Content-Type", value: fileWrapper.file.type }];
 
       try {
+        setUploading(true);
         const receipt = await irys.uploadFile(fileWrapper.file, { tags });
         console.log(`Data uploaded ==> https://arweave.net/${receipt.id}`);
         // Update the fileWrapper with the receipt ID and mark as uploaded
@@ -65,6 +67,8 @@ export const Uploader: React.FC<
         onUpload(`https://arweave.net/${receipt.id}`);
       } catch (e) {
         console.log("Error uploading data ", e);
+      } finally {
+        setUploading(false);
       }
     }
     // Update the state with the new fileWrapper objects
@@ -78,9 +82,23 @@ export const Uploader: React.FC<
           <CardTitle>Upload File</CardTitle>
           <CardDescription>Upload your files to Arweave</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col items-center justify-between">
           <Label htmlFor="file">PDF File</Label>
           <Input type="file" multiple onChange={handleFileUpload} name="file" />
+          {uploading ? (
+            <>
+              {/* loading state */}
+              <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
+              <p className="mt-2 text-sm text-slate-400">
+                Spilling Tea to GPT...
+              </p>
+            </>
+          ) : (
+            <>
+              <Inbox className="w-10 h-10 text-blue-500 pt-2" />
+              <p className="mt-2 text-sm text-slate-400">Drop PDF Here</p>
+            </>
+          )}
         </CardContent>
         <CardFooter>
           <Button onClick={handleUpload}>Upload</Button>
