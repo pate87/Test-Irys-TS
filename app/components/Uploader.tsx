@@ -16,7 +16,9 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const Uploader: React.FC<UploaderConfigProps> = () => {
+export const Uploader: React.FC<
+  UploaderConfigProps & { onUpload: (url: string) => void }
+> = ({ onUpload }) => {
   const [connectedAddress, setConnectedAddress] = useState<string>();
   const [files, setFiles] = useState<FileWrapper[]>([]);
 
@@ -59,6 +61,8 @@ export const Uploader: React.FC<UploaderConfigProps> = () => {
           "file",
           "2"
         );
+
+        onUpload(`https://arweave.net/${receipt.id}`);
       } catch (e) {
         console.log("Error uploading data ", e);
       }

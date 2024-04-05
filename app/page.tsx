@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Navigation from "./components/Navigation";
 import Uploader from "./components/Uploader";
+import { useState } from "react";
 
 export default function Home() {
+  const [url, setUrl] = useState<string | null>(null);
+
   return (
     <>
       <div className="w-screen min-h-screen bg-gradient-to-r from-rose-100 to-teal-100">
@@ -12,7 +17,15 @@ export default function Home() {
               <h1 className="mr-3 text-5xl font-semibold">Chat with any PDF</h1>
               {/* <UserButton afterSignOutUrl="/" /> */}
             </div>
-            <Uploader />
+            <Uploader onUpload={setUrl} />
+            {url && (
+              <p>
+                Uploaded file URL:{" "}
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {url}
+                </a>
+              </p>
+            )}
           </div>
         </div>
       </div>
