@@ -10,12 +10,12 @@ const MainDash: NextPage = () => {
             alt=""
             src="/card-shape.svg"
           />
-          <div className="flex flex-row items-start justify-start py-0 pr-[25px] pl-[24.9px] shrink-0">
+          <div className="flex flex-row items-start justify-start py-0 pr-[25px] pl-[24.9px]">
             <b className="relative inline-block min-w-[125px] z-[1]">
               Welcome 0x...
             </b>
           </div>
-          <div className="self-stretch flex flex-row items-end justify-start gap-[13px] shrink-0 max-w-full text-lgi-5 font-inter mq975:flex-wrap">
+          <div className="self-stretch flex flex-row items-end justify-start gap-[13px] max-w-full text-lgi-5 font-inter mq975:flex-wrap">
             <div className="w-[449.3px] flex flex-col items-start justify-start gap-[19.6px] min-w-[449.2999999999999px] max-w-full mq700:min-w-full mq975:flex-1">
               <div className="self-stretch flex flex-row items-start justify-start gap-[14.1px] mq450:flex-wrap">
                 <div className="flex-1 rounded-[21.65px] [background:linear-gradient(180deg,_rgba(59,_52,_187,_0.6),_rgba(39,_172,_255,_0.06))] overflow-hidden flex flex-col items-start justify-start pt-[8.9px] pb-3.5 pr-[16.2px] pl-[17.3px] box-border gap-[25.2px] min-w-[201px] z-[1]">
@@ -30,6 +30,7 @@ const MainDash: NextPage = () => {
                           className="h-[46.6px] w-[46.6px] relative overflow-hidden shrink-0"
                           loading="lazy"
                           alt=""
+                          src="/trendingcontentstreamlineflex.svg"
                         />
                         <div className="flex-1 flex flex-row items-start justify-start">
                           <div className="h-[42.2px] flex-1 flex flex-col items-start justify-start pt-0 px-0 pb-[13px] box-border gap-[0.1px]">
@@ -53,6 +54,7 @@ const MainDash: NextPage = () => {
                             className="h-[16.2px] w-[16.2px] relative overflow-hidden shrink-0 object-contain [debug_commit:f6aba90]"
                             loading="lazy"
                             alt=""
+                            src="/arrowup-2.svg"
                           />
                           <div className="flex flex-col items-start justify-start pt-[2.1px] px-0 pb-0">
                             <div className="relative inline-block min-w-[72.5px] shrink-0 [debug_commit:f6aba90]">
@@ -85,6 +87,7 @@ const MainDash: NextPage = () => {
                             className="w-[46.6px] h-[46.6px] relative overflow-hidden shrink-0"
                             loading="lazy"
                             alt=""
+                            src="/usercirclesinglestreamlineflex.svg"
                           />
                         </div>
                         <div className="flex flex-row items-start justify-start">
@@ -109,6 +112,7 @@ const MainDash: NextPage = () => {
                             className="h-[16.2px] w-[16.2px] relative overflow-hidden shrink-0 [debug_commit:f6aba90]"
                             loading="lazy"
                             alt=""
+                            src="/arrowup-2-1.svg"
                           />
                           <div className="flex flex-col items-start justify-start pt-[2.1px] px-0 pb-0">
                             <div className="relative inline-block min-w-[85.5px] shrink-0 [debug_commit:f6aba90]">
@@ -141,6 +145,7 @@ const MainDash: NextPage = () => {
                             className="h-[46.6px] w-[46.6px] relative overflow-hidden shrink-0"
                             loading="lazy"
                             alt=""
+                            src="/trendingcontentstreamlineflex-1.svg"
                           />
                           <div className="flex flex-row items-start justify-start">
                             <div className="h-[42.2px] flex flex-col items-start justify-start pt-0 px-0 pb-[13px] box-border gap-[0.1px]">
@@ -164,6 +169,7 @@ const MainDash: NextPage = () => {
                               className="h-[16.2px] w-[16.2px] relative overflow-hidden shrink-0 [debug_commit:f6aba90]"
                               loading="lazy"
                               alt=""
+                              src="/arrowup-3.svg"
                             />
                             <div className="flex flex-col items-start justify-start pt-[2.1px] px-0 pb-0">
                               <div className="relative inline-block min-w-[85.5px] shrink-0 [debug_commit:f6aba90]">
@@ -196,18 +202,17 @@ const MainDash: NextPage = () => {
                           className="w-[46.6px] h-[46.6px] relative overflow-hidden shrink-0"
                           loading="lazy"
                           alt=""
+                          src="/lockrotationstreamlineflex.svg"
                         />
                       </div>
                       <div className="flex-1 flex flex-row items-start justify-start">
-                        <div className="flex-1 flex flex-col items-start justify-start">
-                          <div className="self-stretch flex flex-row items-start justify-start">
-                            <div className="mb-[-1.1368683772161605e-13px] flex-1 flex flex-row items-start justify-start pt-0 px-0 pb-[0.2px]">
-                              <div className="relative font-semibold inline-block min-w-[64px] mq450:text-lgi">
-                                8,091
-                              </div>
+                        <div className="h-[42.2px] flex-1 flex flex-col items-start justify-start pt-0 px-0 pb-[13px] box-border">
+                          <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[0.2px] shrink-0 [debug_commit:f6aba90]">
+                            <div className="relative font-semibold inline-block min-w-[64px] mq450:text-lgi">
+                              8,091
                             </div>
                           </div>
-                          <div className="relative text-2xs-8 font-medium text-steelblue-100 inline-block min-w-[80px]">
+                          <div className="relative text-2xs-8 font-medium text-steelblue-100 inline-block min-w-[80px] shrink-0 [debug_commit:f6aba90]">
                             Files encrypted
                           </div>
                         </div>
@@ -222,6 +227,7 @@ const MainDash: NextPage = () => {
                           className="h-[16.2px] w-[16.2px] relative overflow-hidden shrink-0 [debug_commit:f6aba90]"
                           loading="lazy"
                           alt=""
+                          src="/arrowup-2-1.svg"
                         />
                         <div className="flex flex-col items-start justify-start pt-[2.2px] px-0 pb-0">
                           <div className="relative inline-block min-w-[85.5px] shrink-0 [debug_commit:f6aba90]">
@@ -252,6 +258,7 @@ const MainDash: NextPage = () => {
                     <img
                       className="w-[13.6px] h-[8.1px] relative overflow-hidden shrink-0"
                       alt=""
+                      src="/arrow--down-2.svg"
                     />
                   </div>
                 </div>
@@ -260,10 +267,11 @@ const MainDash: NextPage = () => {
                 <img
                   className="w-full h-full z-[2] object-contain absolute left-[0px] top-[0px] [transform:scale(Infinity)]"
                   alt=""
+                  src="/font-family-finder.svg"
                 />
               </div>
               <div className="self-stretch h-[200.2px] overflow-hidden shrink-0 flex flex-row items-end justify-start pt-0 px-0 pb-[2.1px] box-border gap-[12.2px] max-w-full z-[1] text-2xs-4 text-gray-100">
-                <div className="mb-[-4.999999999999773px] h-[203.1px] flex flex-col items-start justify-start pt-0 px-0 pb-[38px] box-border gap-[25px] shrink-0 [debug_commit:f6aba90]">
+                <div className="mb-[-5px] flex flex-col items-start justify-start gap-[25px] shrink-0 [debug_commit:f6aba90]">
                   <div className="flex flex-row items-start justify-start py-0 pr-0 pl-px">
                     <b className="relative inline-block min-w-[20px]">50k</b>
                   </div>
@@ -282,8 +290,9 @@ const MainDash: NextPage = () => {
                   </div>
                 </div>
                 <img
-                  className="h-[192.9px] flex-1 relative max-w-[calc(100%_-_33px)] overflow-hidden shrink-0 [debug_commit:f6aba90]"
+                  className="h-[192.9px] flex-1 relative max-w-full overflow-hidden shrink-0 [debug_commit:f6aba90]"
                   alt=""
+                  src="/graph.svg"
                 />
               </div>
             </div>
@@ -298,7 +307,9 @@ const MainDash: NextPage = () => {
                 className="h-[62px] w-[63.6px] relative object-cover min-h-[62px]"
                 loading="lazy"
                 alt=""
+                src="/-97f6ac56445a4414801aede1a221e412-1@2x.png"
               />
+
               <div className="flex flex-row items-start justify-start gap-[9.2px]">
                 <div className="relative tracking-[0.01em] font-semibold shrink-0 [debug_commit:f6aba90] mq450:text-6xl mq950:text-14xl">
                   ChainBase
