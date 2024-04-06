@@ -8,11 +8,11 @@ const WalletConnect = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     console.log("provider=>", provider);
     // setConnectedAddress(provider);
-    // const signer = provider.getSigner();
+    const signer = provider.getSigner();
     // console.log("Signer: ", signer);
     // const blockNr = await provider.getBlockNumber();
     // console.log("blockNr=>", blockNr);
-    return provider;
+    return signer;
   }
   // return connectedAddress;
 };
