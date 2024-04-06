@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Inbox, Loader2 } from "lucide-react";
-import Navigation from "./Navigation";
+// import Navigation from "./Navigation";
 export const Uploader: React.FC<
   UploaderConfigProps & { onUpload: (url: string) => void }
 > = ({ onUpload }) => {
@@ -77,7 +77,7 @@ export const Uploader: React.FC<
 
   return (
     <main className="flex flex-col items-center justify-between p-24">
-      <Navigation />
+      {/* <Navigation /> */}
       <Card className={cn("w-[480px]")}>
         <CardHeader>
           <CardTitle>Upload File</CardTitle>
