@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ethers } from "ethers";
@@ -61,8 +63,31 @@ const WalletConnectionComponent = () => {
             {/* <p className="mt-2 text-sm text-slate-400">Drop PDF Here</p> */}
           </>
         )}
+
+        {/* <WalletConnectionComponent /> */}
       </b>
     </div>
+
+    // <div className="flex flex-row items-start justify-start py-0 pr-[25px] pl-[24.9px]">
+    //   <b className="relative inline-block min-w-[125px] z-[1]">
+    //     {!isWalletConnected ? (
+    //       <>
+    //         {/* loading state */}
+    //         {/* <Loader2 className="h-10 w-10 text-blue-500 animate-spin" /> */}
+    //         <p className="mt-2 text-sm text-slate-400">
+    //           {/* Spilling Tea to GPT... */}
+    //           <Button onClick={handleWalletConnect}>Connect Wallet</Button>
+    //         </p>
+    //       </>
+    //     ) : (
+    //       <>
+    //         Welcome {formatWalletAddress(walletAddress)}
+    //         {/* <Inbox className="w-10 h-10 text-blue-500 pt-2" /> */}
+    //         {/* <p className="mt-2 text-sm text-slate-400">Drop PDF Here</p> */}
+    //       </>
+    //     )}
+    //   </b>
+    // </div>
   );
 };
 
