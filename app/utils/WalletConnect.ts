@@ -12,7 +12,7 @@ const WalletConnect = async () => {
     // console.log("Signer: ", signer);
     // const blockNr = await provider.getBlockNumber();
     // console.log("blockNr=>", blockNr);
-    return signer;
+    return provider;
   }
   // return connectedAddress;
 };
